@@ -1,0 +1,19 @@
+{% extends "practica/base.html" %}
+
+{% block title %}Practica Grupo 3 - Menu principal{% endblock %}
+{% block content %}
+    {% if recommendations %}
+        <ul>
+        {% for recomendation in recommendations %}
+            <li>
+                {{ recomendation.1.titulo }}
+            </li>
+            <br/>
+        {% endfor %}
+    </ul>
+    {% else %}
+
+        <p>No hay artistas guardados.</p>
+
+    {% endif %}
+{% endblock %}

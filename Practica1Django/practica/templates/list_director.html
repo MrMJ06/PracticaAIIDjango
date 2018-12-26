@@ -1,0 +1,23 @@
+{% block title %}Usuarios{% endblock %}
+
+{% block content %}
+<h1>Usuarios</h1>
+<table>
+<th>Nombre</th>
+<th>Apellidos</th>
+<th>Peliculas</th>
+{%for director in directores %}
+<tr>
+    <td>{{ director.nombre }}</td>
+    <td>{{ director.apellidos }}</td>
+    <td><ul>
+        {% for pelicula in director.pelicula_set.all %}
+        <li>{{pelicula.titulo}}</li>
+        {% endfor %}
+        </ul></td>
+    <td> </td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

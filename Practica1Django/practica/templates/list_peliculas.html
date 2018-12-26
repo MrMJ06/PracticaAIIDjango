@@ -1,0 +1,19 @@
+{% block title %}Peliculas por categoria{% endblock %}
+
+{% block content %}
+
+
+{% for category, pelicula in peliculas.items %}
+    <h1>{{ category }}</h1>
+<table>
+    <th>Titulo</th>
+    <th>Director</th>
+        {% for p in pelicula %}
+            <tr>
+                <td>{{ p.titulo }}</td>
+                <td>{{ p.director.nombre }}</td>
+            </tr>
+        {% endfor %}
+</table>
+{% endfor %}
+{% endblock %}

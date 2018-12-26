@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Practica Django Grupo 3{% endblock %}</title>
+</head>
+
+<body>
+<div id="sidebar">
+    {% block sidebar %}
+        <ul>
+            <li><a href="/practica/index">Menú principal</a></li>
+            <li><a href="/practica/discograficaSave">Crear discografica</a></li>
+            <li><a href="/practica/artistaSave">Crear artista</a></li>
+            <li><a href="/practica/usuarioSave">Crear usuario</a></li>
+            <li><a href="/practica/tiempoSave">Añadir tiempos</a></li>
+            <li><a href="/practica/estiloSave">Añadir tiempos</a></li>
+
+        </ul>
+        <ul>
+            <li><a href="/practica/artistas">Ver artistas</a></li>
+            <li><a href="/practica/artistas-populares">Artistas más populares</a></li>
+            <li><a href="/practica/buscador">Artistas por usuario</a></li>
+        </ul>
+    {% endblock %}
+</div>
+
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

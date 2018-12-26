@@ -1,0 +1,32 @@
+{% extends "practica/base.html" %}
+
+{% block title %}Lista de artistas (Ordenado por discográficas){% endblock %}
+
+{% block content %}
+    {% if artistas %}
+
+        {% for key, values in artistas.items %}
+            Discografica: {{ key }}
+            <ul>
+                <br/>
+                {% for artista in values %}
+                    <li>Nombre :{{ artista.nombre }}<br/>
+                        Pais:{{ artista.pais }}<br/>
+                        Estilos:
+                        {% for estilo in artista.estilos.all %}
+                            {{ estilo.value }}<br/>
+                        {% endfor %}
+
+                    </li>
+                    <br/>
+                {% endfor %}
+            </ul>
+            <br/>
+        {% endfor %}
+
+    {% else %}
+
+        <p>No hay artistas guardados.</p>
+
+    {% endif %}
+{% endblock %}

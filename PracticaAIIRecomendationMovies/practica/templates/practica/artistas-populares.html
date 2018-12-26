@@ -1,0 +1,26 @@
+{% extends "practica/base.html" %}
+
+{% block title %}Artistas más populares{% endblock %}
+
+{% block content %}
+    {% if artistas %}
+        <ul>
+        {% for artista in artistas %}
+            <li>Nombre:{{ artista.nombre }}<br/>
+                Pais:{{ artista.pais }}<br/>
+                Estilos:
+                <ul>
+                {% for estilo in artista.estilos.all %}
+                    {{ estilo.value }}<br/>
+                {% endfor %}
+                </ul>
+            </li>
+            <br/>
+        {% endfor %}
+    </ul>
+    {% else %}
+
+        <p>No hay artistas guardados.</p>
+
+    {% endif %}
+{% endblock %}
